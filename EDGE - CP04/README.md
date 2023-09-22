@@ -46,16 +46,16 @@ Para executar este projeto, siga os passos abaixo:
 7 - Monitore os dados do projeto em tempo real por meio do Node-RED Dashboard.
 
 ## Circuito
-<img src="/assets/img/Simullide.PNG">
+<img src="./assets/img/Simullide.PNG">
 
 ## DashBoard
-<img src="/assets/img/Dashboard.PNG">
+<img src="./assets/img/Dashboard.PNG">
 
 ## MQTT
-<img src="/assets/img/MQTT.PNG">
+<img src="./assets/img/MQTT.PNG">
 
 ## NODE-RED
-<img src="/assets/img/NODE-RED.PNG">
+<img src="./assets/img/NODE-RED.PNG">
 
 
 ### *Observação*
