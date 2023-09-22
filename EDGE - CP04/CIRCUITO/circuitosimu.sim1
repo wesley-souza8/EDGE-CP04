@@ -1,0 +1,45 @@
+<circuit version="1.0.0-SR1" rev="1402" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+
+<item itemtype="Subcircuit" CircId="Uno-1" mainComp="false" Show_id="true" Show_Val="false" Pos="848,700" rotation="0" hflip="1" vflip="1" label="Uno-1" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Logic_Symbol="false">
+<mainCompProps itemtype="MCU" CircId="1_mega328-109" mainComp="true" Show_id="false" Show_Val="false" Pos="20,20" rotation="0" hflip="1" vflip="1" label="1_mega328-109" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="16 MHz" Program="../Finakl/sketch_sep21a/sketch_sep21a.ino.standard.hex" Auto_Load="false" Rst_enabled="true" Ext_Osc="true" Wdt_enabled="false" />
+</item>
+
+<item itemtype="Dht22" CircId="Dht22-10" mainComp="false" Show_id="false" Show_Val="false" Pos="948,596" rotation="0" hflip="1" vflip="1" label="Dht22-10" idLabPos="-28,-32" labelrot="0" valLabPos="-16,20" valLabRot="0" DHT22="DHT22" TempInc="0.5 °C" HumiInc="5 _%" />
+
+<item itemtype="SerialPort" CircId="SerialPort-29" mainComp="false" ShowProp="Baudrate" Show_id="true" Show_Val="true" Pos="1060,644" rotation="0" hflip="1" vflip="1" label="COM5" idLabPos="-20,-32" labelrot="0" valLabPos="-16,20" valLabRot="0" Port="COM5" Baudrate="9600 _Bauds" DataBits="8 _Bits" StopBits="1 _Bits" />
+
+<item itemtype="Hd44780" CircId="Hd44780-58" mainComp="false" ShowProp="Rows" Show_id="false" Show_Val="true" Pos="652,576" rotation="0" hflip="1" vflip="1" label="Hd44780-58" idLabPos="70,-82" labelrot="0" valLabPos="-16,20" valLabRot="0" Rows="2 _Rows" Cols="16 _Columns" />
+
+<item itemtype="SR04" CircId="SR04-69" mainComp="false" Show_id="false" Show_Val="false" Pos="1016,464" rotation="0" hflip="1" vflip="1" label="SR04-69" idLabPos="-16,-48" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Voltage Source" CircId="Voltage Source-70" mainComp="false" ShowProp="MaxValue" Show_id="false" Show_Val="true" Pos="900,536" rotation="0" hflip="1" vflip="1" label="Voltage Source-70" idLabPos="-32,-48" labelrot="0" valLabPos="-8,30" valLabRot="0" Running="true" Value_Volt="1.855 V" MaxValue="5 V" />
+
+<item itemtype="Node" CircId="Node-53" mainComp="false" Pos="856,688" />
+
+<item itemtype="Connector" uid="connector-59" startpinid="Dht22-10-inPin" endpinid="Uno-1-5" pointList="912,592,784,592,784,756,856,756" />
+
+<item itemtype="Connector" uid="connector-60" startpinid="Uno-1-1" endpinid="Node-53-0" pointList="856,724,856,688" />
+
+<item itemtype="Connector" uid="connector-61" startpinid="Node-53-2" endpinid="SerialPort-29-pin1" pointList="856,688,856,652,1020,652" />
+
+<item itemtype="Connector" uid="connector-62" startpinid="Node-53-1" endpinid="SerialPort-29-pin0" pointList="856,688,856,636,1020,636" />
+
+<item itemtype="Connector" uid="connector-63" startpinid="Hd44780-58-PinRS" endpinid="Uno-1-12" pointList="668,584,668,820,856,820" />
+
+<item itemtype="Connector" uid="connector-64" startpinid="Hd44780-58-dataPin4" endpinid="Uno-1-10" pointList="724,584,724,804,856,804" />
+
+<item itemtype="Connector" uid="connector-65" startpinid="Hd44780-58-dataPin5" endpinid="Uno-1-9" pointList="732,584,732,796,856,796" />
+
+<item itemtype="Connector" uid="connector-66" startpinid="Hd44780-58-dataPin6" endpinid="Uno-1-8" pointList="740,584,740,788,856,788" />
+
+<item itemtype="Connector" uid="connector-67" startpinid="Hd44780-58-dataPin7" endpinid="Uno-1-7" pointList="748,584,748,772,856,772" />
+
+<item itemtype="Connector" uid="connector-68" startpinid="Hd44780-58-PinEn" endpinid="Uno-1-11" pointList="684,584,684,812,856,812" />
+
+<item itemtype="Connector" uid="Connector-71" startpinid="Voltage Source-70-outPin" endpinid="SR04-69-inpin" pointList="928,552,928,440" />
+
+<item itemtype="Connector" uid="Connector-72" startpinid="SR04-69-trigpin" endpinid="Uno-1-2" pointList="1016,512,1016,732,856,732" />
+
+<item itemtype="Connector" uid="Connector-73" startpinid="SR04-69-outpin" endpinid="Uno-1-3" pointList="1024,512,1024,740,856,740" />
+
+</circuit>

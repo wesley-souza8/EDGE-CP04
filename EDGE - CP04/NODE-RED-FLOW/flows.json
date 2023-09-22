@@ -1,0 +1,350 @@
+[
+    {
+        "id": "fac51e61fcb999fc",
+        "type": "tab",
+        "label": "Checkpoint 04",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3410cc2d397dd0ba",
+        "type": "json",
+        "z": "fac51e61fcb999fc",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 610,
+        "y": 440,
+        "wires": [
+            [
+                "39b977f4161ad59d",
+                "2755d7df55384c48",
+                "d58fbe805e08a1fd",
+                "970b8fe713d912c7"
+            ]
+        ]
+    },
+    {
+        "id": "39b977f4161ad59d",
+        "type": "debug",
+        "z": "fac51e61fcb999fc",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "dd9344bae372f266",
+        "type": "mqtt out",
+        "z": "fac51e61fcb999fc",
+        "name": "Comunicação - Umidade",
+        "topic": "fiap/iot/1esr/lifesustent/umi",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "fc313afef62c1ee4",
+        "x": 1150,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "2755d7df55384c48",
+        "type": "change",
+        "z": "fac51e61fcb999fc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.umidade",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 870,
+        "y": 360,
+        "wires": [
+            [
+                "b132897187e4aca7",
+                "dd9344bae372f266"
+            ]
+        ]
+    },
+    {
+        "id": "d58fbe805e08a1fd",
+        "type": "change",
+        "z": "fac51e61fcb999fc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.temperatura",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 440,
+        "wires": [
+            [
+                "b66ac7de42e26512",
+                "bb4ee13fa1a21b63"
+            ]
+        ]
+    },
+    {
+        "id": "b132897187e4aca7",
+        "type": "ui_gauge",
+        "z": "fac51e61fcb999fc",
+        "name": "",
+        "group": "276cb826b0a27acb",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Umidade",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#009dff",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1100,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "b66ac7de42e26512",
+        "type": "ui_gauge",
+        "z": "fac51e61fcb999fc",
+        "name": "",
+        "group": "276cb826b0a27acb",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperatura",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-100",
+        "max": "100",
+        "colors": [
+            "#fbff00",
+            "#eeff00",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1110,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "5ff4ac2737b68107",
+        "type": "serial in",
+        "z": "fac51e61fcb999fc",
+        "name": "COM6",
+        "serial": "656cb642110e62c9",
+        "x": 410,
+        "y": 440,
+        "wires": [
+            [
+                "3410cc2d397dd0ba"
+            ]
+        ]
+    },
+    {
+        "id": "970b8fe713d912c7",
+        "type": "change",
+        "z": "fac51e61fcb999fc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.distancia",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 560,
+        "wires": [
+            [
+                "4177c038491599c0",
+                "b9d15683f34ac957"
+            ]
+        ]
+    },
+    {
+        "id": "4177c038491599c0",
+        "type": "ui_gauge",
+        "z": "fac51e61fcb999fc",
+        "name": "",
+        "group": "276cb826b0a27acb",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Distância",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "500",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1100,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "bb4ee13fa1a21b63",
+        "type": "mqtt out",
+        "z": "fac51e61fcb999fc",
+        "name": "Comunicação - Temperatura",
+        "topic": "fiap/iot/1esr/lifesustent/temp",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "fc313afef62c1ee4",
+        "x": 1160,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "b9d15683f34ac957",
+        "type": "mqtt out",
+        "z": "fac51e61fcb999fc",
+        "name": "Comunicação - Distância",
+        "topic": "fiap/iot/1esr/lifesustent/dist",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "fc313afef62c1ee4",
+        "x": 1150,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "fc313afef62c1ee4",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "276cb826b0a27acb",
+        "type": "ui_group",
+        "name": "Informações",
+        "tab": "cf01d148519cb5ba",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "656cb642110e62c9",
+        "type": "serial-port",
+        "serialport": "COM6",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "cf01d148519cb5ba",
+        "type": "ui_tab",
+        "name": "Infos",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
