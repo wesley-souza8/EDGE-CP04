@@ -61,3 +61,5 @@ Para executar este projeto, siga os passos abaixo:
 ### *Observação*
 ---
 O intervalo de 1666ms utilizado no código representa um atraso de 5 segundos entre cada leitura e transmissão de dados para o Node-RED.
+
+*Para mais informações, acesse nosso [github](https://github.com/wesley-souza8/EDGE-CP04.git)*
